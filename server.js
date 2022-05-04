@@ -72,8 +72,10 @@ app.get("/explorers2/:id", async (req, res) => {
   app.post("/explorers2", async (req, res) => {
     const explorer = {
       name: req.body.name,
-      username: req.body.username,
-      mission: req.body.mission,
+      lang: req.body.lang,
+      missionCommander: req.body.missionCommander,
+      enrollments: req.body.enrollments,
+      hasCertification: req.body.hasCertification,
     };
     const message = "Explorer creado.";
     await prisma.explorer2.create({ data: explorer });
@@ -88,7 +90,7 @@ app.get("/explorers2/:id", async (req, res) => {
         id: id,
       },
       data: {
-        mission: req.body.mission,
+        missionCommander: req.body.missionCommander,
       },
     });
   
