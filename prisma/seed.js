@@ -63,6 +63,30 @@ const prisma = new PrismaClient();
         },
       });
 
+      const woopa6 = await prisma.explorer2.upsert({
+        where: { name: 'Woopa 6' },
+        update: {},
+        create: {
+          name: 'Woopa 6',
+                  lang: 'English',
+                  missionCommander: 'Carlo',
+                  enrollments: 3,
+                  hasCertification: true
+        },
+      });
+
+      const woopa7 = await prisma.explorer2.upsert({
+        where: { name: 'Woopa 7' },
+        update: {},
+        create: {
+          name: 'Woopa 7',
+                  lang: 'Spanish',
+                  missionCommander: 'Fernanda',
+                  enrollments: 1,
+                  hasCertification: false
+        },
+      });
+
     console.log('Create 5 explorers');
   } catch(e) {
     console.error(e);
